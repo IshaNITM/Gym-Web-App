@@ -23,7 +23,6 @@ docker compose up mongo
 
 # terminal 2 — API
 cd backend
-cp ../.env.example .env   # optional; defaults work with local mongo
 npm install
 npm run seed              # optional manual seed; empty DB also seeds on server start
 npm run dev
