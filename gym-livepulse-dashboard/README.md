@@ -189,6 +189,11 @@ GET /api/anomalies
 ```
 
 ---
+## Screenshots
+<img width="1867" height="882" alt="image" src="https://github.com/user-attachments/assets/96e6cfdd-3524-4922-a7c7-5594a68517e6" />
+<img width="1865" height="972" alt="image" src="https://github.com/user-attachments/assets/9655381f-9921-4dde-8e48-bbab373c44f9" />
+
+
 
 ## 📊 Dashboard Includes
 
@@ -209,6 +214,7 @@ GET /api/anomalies
 - LinkedIn: https://www.linkedin.com/in/isha-pal
 
 ---
+
 
 ## 📄 License
 
