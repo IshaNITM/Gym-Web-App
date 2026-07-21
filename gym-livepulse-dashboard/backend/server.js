@@ -12,7 +12,14 @@ import anomalyRoutes from './routes/anomalies.js';
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 const app = express();
 
-app.use(cors({ origin: true }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5000',
+    'https://gym-web-app-two.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
