@@ -1,274 +1,215 @@
-# 🏋️ LivePulse Dashboard
+# 🏋️ Gym LivePulse Dashboard
 
-A production-inspired **Full Stack MERN application** that simulates a multi-location fitness chain management platform. The application provides real-time operational insights through interactive dashboards, analytics, occupancy monitoring, member management, and revenue tracking.
+A full-stack MERN dashboard for monitoring gym operations, member activity, occupancy, revenue analytics, and anomaly detection. The application provides real-time insights into gym performance through an interactive and responsive dashboard.
 
-Designed using a **feature-based backend architecture**, reusable React components, RESTful APIs, and MongoDB to demonstrate scalable full-stack application development.
+## 🚀 Live Demo
 
----
+**Frontend:** https://gym-web-app-two.vercel.app
 
-## 🚀 Key Features
-
-### 📊 Analytics Dashboard
-- Real-time business KPIs
-- Revenue analytics
-- Occupancy monitoring
-- Membership growth insights
-- Churn risk analysis
-- Operational anomaly detection
-- Gym-wise performance comparison
-
-### 👥 Member Management
-- Paginated member listing
-- Search & filtering
-- Gym-wise member management
-- Member statistics
-
-### 🏢 Gym Management
-- Multi-location support
-- Live occupancy tracking
-- Capacity monitoring
-- Individual gym details
-
-### ⚡ Backend
-- RESTful API architecture
-- Feature-based project structure
-- MongoDB + Mongoose
-- Automatic database seeding
-- Dockerized deployment
-- Environment-based configuration
+**Backend API:** https://gym-web-app-3-6knh.onrender.com
 
 ---
 
-# 🛠 Tech Stack
+## 📂 GitHub Repository
 
-## Frontend
+https://github.com/IshaNITM/Gym-Web-App
+
+---
+
+## ✨ Features
+
+- Gym Dashboard with key performance metrics
+- Member Management
+- Gym Occupancy Monitoring
+- Revenue Analytics
+- Churn Risk Analysis
+- Anomaly Detection
+- RESTful API Integration
+- Responsive UI
+- MongoDB Database Integration
+- Auto Database Seeding
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
 - React.js
-- React Router
+- Vite
 - Axios
+- React Router
 - Recharts
-- CSS3
-- Responsive Design
+- CSS
 
-## Backend
+### Backend
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
 
-## DevOps
-- Docker
-- Docker Compose
-- Nginx
+### Deployment
+- Vercel (Frontend)
+- Render (Backend)
+- MongoDB Atlas (Database)
 
 ---
 
-# 🏗 Architecture
+## 📁 Project Structure
 
 ```
-React Client
-      │
-      ▼
-Express REST API
-      │
-      ▼
-Controllers
-      │
-      ▼
-Services
-      │
-      ▼
-Repositories
-      │
-      ▼
-MongoDB
-```
-
-The backend follows a modular **Feature-Based Architecture**, separating routes, controllers, services, repositories, and models for scalability and maintainability.
-
----
-
-# 📂 Project Structure
-
-```
-livepulse-dashboard/
+gym-livepulse-dashboard
 │
-├── backend/
-│   ├── config/
-│   ├── features/
-│   ├── middleware/
-│   ├── utils/
-│   ├── app.js
+├── frontend
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── config
+│   ├── seed
 │   └── server.js
 │
-├── frontend/
-│   ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── hooks/
-│   ├── services/
-│   └── App.jsx
-│
-└── docker-compose.yml
+└── README.md
 ```
 
 ---
 
-# 📈 Demo Dataset
+## ⚙️ Installation
 
-The application automatically seeds realistic demo data including:
-
-- 🏢 10 Gym Locations
-- 👥 5,000 Members
-- 📊 ~270,000 Check-ins
-- 💰 Revenue Records
-- 💳 Membership Plans
-- 🚨 Operational Anomalies
-
-The database is automatically seeded when empty.
-
----
-
-# 🚀 Getting Started
-
-## Run with Docker
+### Clone Repository
 
 ```bash
-docker compose up --build
+git clone https://github.com/IshaNITM/Gym-Web-App.git
 ```
 
-Dashboard
+Navigate to the project:
 
-```
-http://localhost:3000
-```
-
-API
-
-```
-http://localhost:5000/api/health
+```bash
+cd Gym-Web-App/gym-livepulse-dashboard
 ```
 
 ---
 
-## Local Development
-
-### Start MongoDB
-
-```bash
-docker compose up mongo
-```
-
-### Backend
+## Backend Setup
 
 ```bash
 cd backend
-
 npm install
+```
 
-npm run seed
+Create a `.env` file:
 
+```env
+MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+AUTO_SEED_IF_EMPTY=true
+```
+
+Start the backend:
+
+```bash
 npm run dev
 ```
 
-### Frontend
+---
+
+## Frontend Setup
 
 ```bash
 cd frontend
-
 npm install
+```
 
+Create a `.env` file:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+Start the frontend:
+
+```bash
 npm run dev
 ```
 
 ---
 
-# 🌍 MongoDB Atlas
+## 🌐 Production Deployment
 
-Configure your connection string inside:
+### Frontend
+
+- Hosted on **Vercel**
+
+### Backend
+
+- Hosted on **Render**
+
+### Database
+
+- Hosted on **MongoDB Atlas**
+
+---
+
+## API Endpoints
+
+### Health
 
 ```
-backend/.env
+GET /api/health
 ```
 
-Example:
+### Gyms
 
-```env
-MONGODB_URI=your_connection_string
+```
+GET /api/gyms
+GET /api/gyms/:id
+GET /api/gyms/:id/occupancy
 ```
 
-If your password contains special characters (`#`, `@`, `/`), URL-encode them before adding the connection string.
+### Members
+
+```
+GET /api/members
+```
+
+### Analytics
+
+```
+GET /api/analytics/revenue
+GET /api/analytics/churn-risk
+```
+
+### Anomalies
+
+```
+GET /api/anomalies
+```
 
 ---
 
-# 📡 REST API
+## 📊 Dashboard Includes
 
-## Gyms
-
-| Method | Endpoint |
-|---------|----------|
-| GET | `/api/gyms` |
-| GET | `/api/gyms/:id` |
-| GET | `/api/gyms/:id/occupancy` |
-
----
-
-## Members
-
-| Method | Endpoint |
-|---------|----------|
-| GET | `/api/members?page=1&limit=25&gymId=` |
+- Revenue Overview
+- Gym Utilization
+- Occupancy Monitoring
+- Member Statistics
+- Churn Prediction
+- Operational Anomaly Detection
 
 ---
 
-## Analytics
-
-| Method | Endpoint |
-|---------|----------|
-| GET | `/api/analytics/revenue` |
-| GET | `/api/analytics/churn-risk` |
-| GET | `/api/anomalies` |
-
----
-
-# ✨ Technical Highlights
-
-- Full Stack MERN Application
-- Feature-Based Backend Architecture
-- RESTful APIs
-- MongoDB Aggregation Pipelines
-- Interactive Analytics Dashboard
-- Responsive React UI
-- Modular & Scalable Codebase
-- Dockerized Development Environment
-- Automatic Database Seeding
-- Clean Project Structure
-
----
-
-# 📌 Future Improvements
-
-- JWT Authentication
-- Role-Based Access Control (RBAC)
-- WebSocket-based Live Updates
-- Export Reports (PDF/Excel)
-- Email Notifications
-- Unit & Integration Testing
-- CI/CD Pipeline
-- API Documentation (Swagger)
-
----
-
-## 👨‍💻 Author
+## 👩‍💻 Author
 
 **Isha Pal**
 
-Full Stack JavaScript Developer
+- GitHub: https://github.com/IshaNITM
+- LinkedIn: https://www.linkedin.com/in/isha-pal
 
-- React.js
-- React Native
-- Node.js
-- Express.js
-- MongoDB
-- TypeScript
+---
 
-Feel free to ⭐ the repository if you found it useful.
+## 📄 License
+
+This project is created for learning, portfolio, and demonstration purposes.
